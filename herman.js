@@ -2976,7 +2976,7 @@ Payment
 - DANA
 - PULSA`
   herman.updatePresence(from, Presence.composing)
-              herman.sendMessage(from, { contentText: `${text}`, footerText: '| Monggo Di Beli Biar\nBisa Nikmatin Fitur Lainnya |', buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: '乡OWNER🤖' }, type: 1 },{buttonId: `${prefix}sewa`,buttonText:{displayText: '💎SEWA BOT💎'},type:1}{buttonId: `${prefix}sc`,buttonText:{displayText: '🗿SOURCECODE🗿'},type:1},{buttonId: `${prefix}allmenu`,buttonText:{displayText: '🏴‍☠️ALLMENU'️},type:1} ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: HC, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+              herman.sendMessage(from, { contentText: `${text}`, footerText: '| Monggo Di Beli Biar\nBisa Nikmatin Fitur Lainnya |', buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: '乡OWNER🤖' }, type: 1 },{buttonId: `${prefix}sewa`,buttonText:{displayText: '💎SEWA BOT💎'},type:1},{buttonId: `${prefix}sc`,buttonText:{displayText: '🗿SOURCECODE🗿'},type:1},{buttonId: `${prefix}allmenu`,buttonText:{displayText: '🏴‍☠️ALLMENU'️},type:1}], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: HC, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
               break
       
   break
