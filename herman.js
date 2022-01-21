@@ -95,7 +95,7 @@ zekskey = "B14NNIHBOS"
 lolkey = "e39b4bc1fbdc65408e6451fd"
 apikey = "e39b4bc1fbdc65408e6451fd"
 ownerName = "NekellH4xor🔥"
-prefix = ""
+prefix = "."
 mn = "🦊⃫⃟⃤"
 botName = "CornFake-Bot👹"
 owner = "6289695073357"
@@ -203,7 +203,7 @@ module.exports = herman = async (herman, mann) => {
 		const from = mann.key.remoteJid
 		const type = Object.keys(mann.message)[0]        
         const cmd = (type === 'conversation' && mann.message.conversation) ? mann.message.conversation : (type == 'imageMessage') && mann.message.imageMessage.caption ? mann.message.imageMessage.caption : (type == 'videoMessage') && mann.message.videoMessage.caption ? mann.message.videoMessage.caption : (type == 'extendedTextMessage') && mann.message.extendedTextMessage.text ? mann.message.extendedTextMessage.text : ''.slice(1).trim().split(/ +/).shift().toLowerCase()
-    var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix			
+    var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "." : prefa ?? global.prefix			
           body = (type === 'conversation' && mann.message.conversation.startsWith(prefix)) ? mann.message.conversation : (type == 'imageMessage') && mann.message[type].caption.startsWith(prefix) ? mann.message[type].caption : (type == 'videoMessage') && mann.message[type].caption.startsWith(prefix) ? mann.message[type].caption : (type == 'extendedTextMessage') && mann.message[type].text.startsWith(prefix) ? mann.message[type].text : (type == 'listResponseMessage') && mann.message[type].singleSelectReply.selectedRowId ? mann.message[type].singleSelectReply.selectedRowId : (type == 'buttonsResponseMessage') && mann.message[type].selectedButtonId ? mann.message[type].selectedButtonId : (type == 'stickerMessage') && (getCmd(mann.message[type].fileSha256.toString('base64')) !== null && getCmd(mann.message[type].fileSha256.toString('base64')) !== undefined) ? getCmd(mann.message[type].fileSha256.toString('base64')) : ""
 		budy = (type === 'conversation') ? mann.message.conversation : (type === 'extendedTextMessage') ? mann.message.extendedTextMessage.text : ''
 		const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()		
@@ -782,7 +782,7 @@ if (args.length < 2) return reply(`Penggunaan ${command} idgroup`)
                await sleep(1000)
                txtt =`Hai Kak ${pushname}\nItu Ownerku, Mau Ngpain Ya?\nJangan di ajak ngegay ya anjg`
 
-               buttons = [{buttonId: `${prefix}sourcecode`,buttonText:{displayText:'🗿SC BOT🗿'},type:1},{buttonId:`${prefix}sewa`,buttonText:{displayText:'💎SEWA BOT💎'},type:1},{buttonId: `${prefix}donasi`,buttonText:{displayText: '📌DONASI📌'},type:1}]
+               buttons = [{buttonId: `${prefix}sc`,buttonText:{displayText:'🗿SC BOT🗿'},type:1},{buttonId:`${prefix}sewa`,buttonText:{displayText:'💎SEWA BOT💎'},type:1},{buttonId: `${prefix}donasi`,buttonText:{displayText: '📌DONASI📌'},type:1}]
 
                buttonsMessage = {
                contentText: `${txtt}`,
@@ -807,7 +807,7 @@ texxt =`*OPEN SEWA BOT*
 - BANK BRI, CIMBNIAGA
 - ALL QRIS`
 herman.updatePresence(from, Presence.composing)
-              herman.sendMessage(from, { contentText: `${texxt}`, footerText: '© CREATED BY NEKELLH4XOR 🔥', buttons: [{ buttonId: `donasi`, buttonText: { displayText: 'DONASI' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: Herman3, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+              herman.sendMessage(from, { contentText: `${texxt}`, footerText: '© CREATED BY NEKELLH4XOR 🔥', buttons: [{ buttonId: `.donasi`, buttonText: { displayText: '📍DONASI📍' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: Herman3, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
               break
 
                case 'spamcall':{
@@ -963,7 +963,7 @@ ${mn} *Versi* : *${os.platform()}*`
                 
 			herman.updatePresence(from, Presence.composing)
 			
-                    herman.sendMessage(from, { contentText: `${menu}`, footerText: 'Jika Kamu Menggunakan Whatsaap Mod Dan Tidak Ada Button Atau Button Tidak Respon Langsung Ketik .allmenu Saja\n• Note!! Dilarang Menyepam Bot Beri Jeda Minimal 3-5detik! Please Hargai Owner \n© CREATED BY NEKELLH4XOR 🔥', buttons: [{ buttonId: `${prefix}allmenu`, buttonText: { displayText: '📍ALLMENU📍' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: '🏴‍☠️OWNER🏴‍☠️' }, type: 1 }], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: Herman, contextInfo: {mentionedJid: [sender, owner]}}}, 'buttonsMessage')
+                    herman.sendMessage(from, { contentText: `${menu}`, footerText: 'Jika Kamu Menggunakan Whatsaap Mod Dan Tidak Ada Button Atau Button Tidak Respon Langsung Ketik .allmenu Saja\n• Note!! Dilarang Menyepam Bot Beri Jeda Minimal 3-5detik! Please Hargai Owner \n© CREATED BY NEKELLH4XOR 🔥', buttons: [{ buttonId: `${prefix}allmenu`, buttonText: { displayText: '📍ALLMENU📍' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: '🏴‍☠️OWNER' }, type: 1 }], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: Herman, contextInfo: {mentionedJid: [sender, owner]}}}, 'buttonsMessage')
               break
 case 'f':
 case 'lock':
