@@ -965,7 +965,7 @@ ${mn} *Versi* : *${os.platform()}*`
                 
 			herman.updatePresence(from, Presence.composing)
 			
-                    herman.sendMessage(from, { contentText: `${menu}`, footerText: 'Jika Kamu Menggunakan Whatsaap Mod Dan Tidak Ada Button Atau Button Tidak Respon Langsung Ketik ${prefix}allmenu Saja\n• Note!! Dilarang Menyepam Bot Beri Jeda Minimal 3-5detik! Please Hargai Owner \n© CREATED BY NEKELLH4XOR 🔥', buttons: [{ buttonId: `${prefix}allmenu`, buttonText: { displayText: '🏴‍☠️ALLMENU🏴‍☠️' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: '🔥OWNER🔥' }, type: 1 }], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: Herman, contextInfo: {mentionedJid: [sender, owner]}}}, 'buttonsMessage')
+                    herman.sendMessage(from, { contentText: `${menu}`, footerText: 'Jika Kamu Menggunakan Whatsaap Mod Dan Tidak Ada Button Atau Button Tidak Respon Langsung Ketik .allmenu Saja\n• Note!! Dilarang Menyepam Bot Beri Jeda Minimal 3-5detik! Please Hargai Owner \n© CREATED BY NEKELLH4XOR 🔥', buttons: [{ buttonId: `${prefix}allmenu`, buttonText: { displayText: '📍ALLMENU📍' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: '🏴‍☠️OWNER🏴‍☠️' }, type: 1 }], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: Herman, contextInfo: {mentionedJid: [sender, owner]}}}, 'buttonsMessage')
               break
 case 'f':
 case 'lock':
