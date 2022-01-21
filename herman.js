@@ -95,7 +95,8 @@ zekskey = "B14NNIHBOS"
 lolkey = "e39b4bc1fbdc65408e6451fd"
 apikey = "e39b4bc1fbdc65408e6451fd"
 ownerName = "Hermansyah"
-prefix = "multi"
+multi = true
+nopref = false
 mn = "🦊⃫⃟⃤"
 botName = "CornFake-Bot👹"
 owner = "6289695073357"
@@ -203,9 +204,15 @@ module.exports = herman = async (herman, mann) => {
 		const from = mann.key.remoteJid
 		const type = Object.keys(mann.message)[0]        
         const cmd = (type === 'conversation' && mann.message.conversation) ? mann.message.conversation : (type == 'imageMessage') && mann.message.imageMessage.caption ? mann.message.imageMessage.caption : (type == 'videoMessage') && mann.message.videoMessage.caption ? mann.message.videoMessage.caption : (type == 'extendedTextMessage') && mann.message.extendedTextMessage.text ? mann.message.extendedTextMessage.text : ''.slice(1).trim().split(/ +/).shift().toLowerCase()
-    const prefix = /^[°Z•π÷×¶∆£¢€¥®™=|~#%^&./\\©^z+,;]/.test(cmd) ? cmd.match(/^[°•Zπ÷×¶∆£¢€¥®™=|~#%^&./\\©^z+,;]/gi) : '!'
-  
-			
+    if (multi){
+		    var prefix = /^[°zZ#$@*+,.?=''():√%!¢£¥€π¤ΠΦ_&><`™©®Δ^βα¦|/\\©^]/.test(cmd) ? cmd.match(/^[°zZ#$@*+,.?=''():√%¢£¥€π¤ΠΦ_&><!`™©®Δ^βα¦|/\\©^]/gi) : '.'
+        } else {
+            if (nopref){
+                prefix = ''
+            } else {
+                prefix = prefa
+            }
+        }			
           body = (type === 'conversation' && mann.message.conversation.startsWith(prefix)) ? mann.message.conversation : (type == 'imageMessage') && mann.message[type].caption.startsWith(prefix) ? mann.message[type].caption : (type == 'videoMessage') && mann.message[type].caption.startsWith(prefix) ? mann.message[type].caption : (type == 'extendedTextMessage') && mann.message[type].text.startsWith(prefix) ? mann.message[type].text : (type == 'listResponseMessage') && mann.message[type].singleSelectReply.selectedRowId ? mann.message[type].singleSelectReply.selectedRowId : (type == 'buttonsResponseMessage') && mann.message[type].selectedButtonId ? mann.message[type].selectedButtonId : (type == 'stickerMessage') && (getCmd(mann.message[type].fileSha256.toString('base64')) !== null && getCmd(mann.message[type].fileSha256.toString('base64')) !== undefined) ? getCmd(mann.message[type].fileSha256.toString('base64')) : ""
 		budy = (type === 'conversation') ? mann.message.conversation : (type === 'extendedTextMessage') ? mann.message.extendedTextMessage.text : ''
 		const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()		
@@ -1459,43 +1466,9 @@ Dana : 089695073357
 Tqto : All Friend And All Idoll!`
               
               
-              let message = await prepareWAMessageMedia({ image: fs.readFileSync('./media/Menu.jpg') }, { upload: herman.waUploadToServer })
-                const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                    templateMessage: {
-                        hydratedTemplate: {
-                            imageMessage: message.imageMessage,
-                            hydratedContentText: anu,
-                            hydratedButtons: [{
-                                urlButton: {
-                                    displayText: 'Website',
-                                    url: 'https://www.cirebonxploit.tech/'
-                                }
-                            }, {
-                                callButton: {
-                                    displayText: 'Number Phone Owner',
-                                    phoneNumber: '+6289695073357'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Status Bot',
-                                    id: 'ping'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Contact Owner',
-                                    id: 'owner'
-                                }  
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Script',
-                                    id: 'sc'
-                                }
-                            }]
-                        }
-                    }
-                }), { userJid: m.chat, quoted: m })
-                herman.relayMessage(m.chat, template.message, { messageId: template.key.id })
-            break
+              herman.updatePresence(from, Presence.composing)
+              herman.sendMessage(from, { contentText: `${menu}`, footerText: '© CRRATED BY NEKELLH4XOR 🔥', buttons: [{ buttonId: `sewa`, buttonText: { displayText: '💎SEWA BOT💎' }, type: 1 },{ buttonId: `donasi`, buttonText: { displayText: '📍DONASI📍' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: Herman2, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+              break
 case 'fitnah':
                  
 				 
