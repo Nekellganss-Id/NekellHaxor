@@ -1496,7 +1496,6 @@ Tqto : All Friend And All Idoll!`
                 }), { userJid: m.chat, quoted: m })
                 herman.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
-break
 case 'fitnah':
                  
 				 
