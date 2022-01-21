@@ -784,7 +784,7 @@ if (args.length < 2) return reply(`Penggunaan ${command} idgroup`)
                await sleep(1000)
                txtt =`Hai Kak ${pushname}\nItu Ownerku, Mau Ngpain Ya?\nJangan di ajak ngegay ya anjg`
 
-               buttons = [{buttonId: '${prefix}sourcecode',buttonText:{displayText:'🗿SC BOT🗿'},type:1},{buttonId:'${prefix}sewa',buttonText:{displayText:'💎SEWA BOT💎'},type:1},{buttonId: `${prefix}donasi`,buttonText:{displayText: `📌DONASI📌`},type:1}]
+               buttons = [{buttonId: `${prefix}sourcecode`,buttonText:{displayText:'🗿SC BOT🗿'},type:1},{buttonId:`${prefix}sewa`,buttonText:{displayText:'💎SEWA BOT💎'},type:1},{buttonId: `${prefix}donasi`,buttonText:{displayText: '📌DONASI📌'},type:1}]
 
                buttonsMessage = {
                contentText: `${txtt}`,
@@ -1459,8 +1459,43 @@ Dana : 089695073357
 Tqto : All Friend And All Idoll!`
               
               
-              herman.updatePresence(from, Presence.composing)
-              herman.sendMessage(from, { contentText: `${menu}`, footerText: '• Jangan Lupa Donasi Ya..😊', buttons: [{ buttonId: `${prefix}sewa`, buttonText: { displayText: '乡SEWA BOT📌' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: Herman2, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+              let message = await prepareWAMessageMedia({ image: fs.readFileSync('./media/Menu.jpg') }, { upload: herman.waUploadToServer })
+                const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            imageMessage: message.imageMessage,
+                            hydratedContentText: anu,
+                            hydratedButtons: [{
+                                urlButton: {
+                                    displayText: 'Website',
+                                    url: 'https://github.com/Nekellganss-Id/NekellHaxor'
+                                }
+                            }, {
+                                callButton: {
+                                    displayText: 'Number Phone Owner',
+                                    phoneNumber: '+6289695073357'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Status Bot',
+                                    id: 'ping'
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Contact Owner',
+                                    id: 'owner'
+                                }  
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Script',
+                                    id: 'sc'
+                                }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat, quoted: m })
+                herman.relayMessage(m.chat, template.message, { messageId: template.key.id })
+            }
               break
 
 case 'fitnah':
@@ -2976,7 +3011,7 @@ Payment
 - DANA
 - PULSA`
   herman.updatePresence(from, Presence.composing)
-              herman.sendMessage(from, { contentText: `${text}`, footerText: 'Monggo Di Beli Biar Bisa Nikmati Fitur Premium', buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: '乡OWNER' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: HC, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+              herman.sendMessage(from, { contentText: `${text}`, footerText: 'Monggo Di Beli Biar Bisa Nikmati Fitur Premium', buttons: [{ buttonId: `${prefix}owner`, buttonText: { displayText: '乡OWNER' }, type: 1 }, { buttonId: `${prefix}sc`, buttonText: { displayText: '🗿SOURCECODE🗿' }, type: 1 }, { buttonId: `${prefix}sewa`, buttonText: { displayText: '💎SEWA BOT💎' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: HC, contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
               break
       
   break
